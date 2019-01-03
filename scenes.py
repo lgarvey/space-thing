@@ -27,6 +27,7 @@ class SpaceShip:
         self._trajectory = pygame.math.Vector2((0, 0))
         self._rect = None
         self._firing_laser = False
+        self._laser_sound = pygame.mixer.Sound('laser.wav')
 
     def draw(self, surface):
         image = pygame.transform.rotate(self._image, self._direction)
@@ -57,6 +58,7 @@ class SpaceShip:
         self._direction = (self._direction - config.ROTATIONAL_THRUST) % 360
 
     def shoot_laser(self):
+        self._laser_sound.play()
         self._firing_laser = True
 
     def shoot_cannon(self):
