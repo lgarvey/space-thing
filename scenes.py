@@ -92,7 +92,6 @@ class SpaceShip:
 
 class Level1Scene(Scene):
     def __init__(self, screen, *args, **kwargs):
-        super().__init__(*args, **kwargs)
 
         self._planet = self._image = pygame.image.load('jupiter.png')
         self._planet_rect = self._planet.get_rect(center=(screen.get_width()/2, screen.get_height()/2))
